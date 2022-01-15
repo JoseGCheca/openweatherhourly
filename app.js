@@ -16,5 +16,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.set('port', process.env.PORT || 3001);
 
+var server = app.listen(app.get('port'), function () {
+    console.log('server listening on port ' + server.address().port);
+});
 module.exports = app;
