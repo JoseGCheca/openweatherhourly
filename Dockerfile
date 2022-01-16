@@ -1,6 +1,6 @@
 FROM node:10-alpine
 
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+RUN mkdir -p /home/node/app/ && chown -R node:node /home/node/app
 
 WORKDIR /home/node/app
 
@@ -13,5 +13,4 @@ RUN npm install
 COPY --chown=node:node . .
 
 EXPOSE 8080
-EXPOSE 3001
-CMD [ "node", "/bin/www" ]
+CMD ["npm", "start"]
