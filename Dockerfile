@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:16-alpine3.14
 
 RUN mkdir -p /home/node/app/ && chown -R node:node /home/node/app
 
@@ -6,9 +6,9 @@ WORKDIR /home/node/app
 
 COPY package*.json ./
 
-USER node
-
 RUN npm install
+
+USER node
 
 COPY --chown=node:node . .
 

@@ -1,0 +1,6 @@
+{
+    "database": {
+        "url": "mongodb://root:test@mongo:27017",
+        "name" : "openweatherapi"
+    }
+}

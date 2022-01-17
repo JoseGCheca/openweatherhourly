@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+"use strict";
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const apiServices = require("../controllers/index");
 
-module.exports = router;
+const routers = (app) => {
+  app.use("/api/", apiServices);
+};
+
+module.exports = routers;
